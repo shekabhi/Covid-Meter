@@ -22,7 +22,9 @@ class _LodingState extends State<Loding> {
 
     }
     catch (e) {
-      print("catch error : $e");
+     // print("catch error : $e");
+      print("Error Page Call");
+      Navigator.pushNamed(context, '/error404');
     }
 
     Navigator.pushReplacementNamed(context, '/home' , arguments: {
