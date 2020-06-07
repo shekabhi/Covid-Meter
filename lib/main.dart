@@ -10,7 +10,7 @@ void main() {
     routes: {
       '/' : (context) => Loding(),
       '/home' : (context) => Home(),
-      '/location' : (context) => ChooseCountry(),
+      '/country' : (context) => ChooseCountry(),
     },
   ));
 }

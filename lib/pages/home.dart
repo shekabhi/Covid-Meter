@@ -42,7 +42,9 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FlatButton.icon(
-                    onPressed: () async {},
+                    onPressed: () async {
+                      Navigator.pushNamed(context, '/country');
+                    },
                     icon: Icon(
                       Icons.edit_location,
                       color: Color(0xFF42A5F5),
@@ -77,7 +79,7 @@ class _HomeState extends State<Home> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'Total Confirmed : $totalConfirmed',
+                        'Total Recovered : $totalRecovered',
                         textAlign: TextAlign.end,
                         style: TextStyle(
                           fontSize: 20.0,
