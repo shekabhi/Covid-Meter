@@ -42,13 +42,13 @@ class _HomeState extends State<Home> {
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.white,
-                  Colors.grey[200],
+                  Colors.white,
                   Colors.blue[300],
                 ],
               )),
           child: Padding(
             padding: const EdgeInsets.all(24.0),
-            child: Column(
+            child: ListView(
               children: [
                 SizedBox(height: 50,),
                 Row(
@@ -56,14 +56,14 @@ class _HomeState extends State<Home> {
                   children: [
                     FlatButton.icon(
                       onPressed: () async {
-                        Navigator.pushNamed(context, '/country');
+                        Navigator.pushNamed(context, '/indiaPage');
                       },
                       icon: Icon(
                         Icons.edit_location,
                         color: Color(0xFF42A5F5),
                       ) ,
                       label: Text(
-                        'Tap To Choose Country',
+                        'Tap To Choose India Data',
                         style: TextStyle(
                           fontSize: 15.0,
                         ),
@@ -86,6 +86,10 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 20,),
                 Card(
+                  elevation: 20,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -105,6 +109,10 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 20,),
                 Card(
+                  elevation: 20,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -124,6 +132,10 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 20,),
                 Card(
+                  elevation: 20,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

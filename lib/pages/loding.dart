@@ -24,7 +24,7 @@ class _LodingState extends State<Loding> {
     catch (e) {
      // print("catch error : $e");
       print("Error Page Call");
-      Navigator.pushNamed(context, '/error404');
+      Navigator.pushNamed(context, '/indiaPage');
     }
 
     Navigator.pushReplacementNamed(context, '/home' , arguments: {
@@ -32,7 +32,6 @@ class _LodingState extends State<Loding> {
       'TotalDeaths': data.values.elementAt(1),
       'TotalRecovered' : data.values.elementAt(2),
     });
-
 
   }
 
