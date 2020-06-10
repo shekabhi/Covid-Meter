@@ -87,36 +87,53 @@ class _IndiaPageState extends State<IndiaPage> {
                         child: Card(
                             elevation: 20,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
+                              borderRadius: BorderRadius.circular(15.0),
                             ),
-
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: ListTile(
-                                title: Text(
-                                    snapshot.data[index].state,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    letterSpacing: 1.0,
-                                    wordSpacing: 2.0,
-                                    fontSize: 25.0,
-                                    color: Colors.blue[600],
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: ListTile(
+                                    title: Text(
+                                      snapshot.data[index].state,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        letterSpacing: 1.0,
+                                        wordSpacing: 2.0,
+                                        fontSize: 25.0,
+                                        color: Colors.blue[600],
+                                      ),
+                                    ),
+                                    subtitle: Text("\nTotal Confirmed : ${snapshot.data[index].confirmed}" +
+                                        "\nTotal Active : ${snapshot.data[index].active}" +
+                                        "\nTotal Recovered : ${snapshot.data[index].recovered}" +
+                                        "\nTotal Deaths : ${snapshot.data[index].deaths}" +
+                                        "\nLast Update : ${snapshot.data[index].lastupdatedtime}" ,
+                                      style: TextStyle(
+                                        letterSpacing: 0.5,
+                                        wordSpacing: 1.0,
+                                        fontSize: 18.0,
+                                        color: Colors.black,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                                subtitle: Text("\nTotal Confirmed : ${snapshot.data[index].confirmed}" +
-                                    "\nTotal Active : ${snapshot.data[index].active}" +
-                                    "\nTotal Recovered : ${snapshot.data[index].recovered}" +
-                                    "\nTotal Deaths : ${snapshot.data[index].deaths}" +
-                                    "\nLast Update : ${snapshot.data[index].lastupdatedtime}" ,
-                                  style: TextStyle(
-                                    letterSpacing: 0.5,
-                                    wordSpacing: 1.0,
-                                    fontSize: 18.0,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            )),
+                                ButtonBar(
+                                  children: [
+                                    FlatButton(
+                                      child: Text("District Wise Data"),
+                                      onPressed: (){
+                                        Navigator.pushReplacementNamed(context, '/statePage' ,arguments: {
+                                          'stateCode' : snapshot.data[index].statecode ,
+                                        });
+                                      },
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                        ),
                       ),
                     );
                   }

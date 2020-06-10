@@ -10,6 +10,7 @@ class StatePage extends StatefulWidget {
 }
 
 class _StatePageState extends State<StatePage> {
+  Map dataReached = {} ;
 
   Future<List<StateData>> __getDistrictData() async{
 
@@ -22,6 +23,9 @@ class _StatePageState extends State<StatePage> {
       "UP" :34, "UT" :35, "WB" :36,
     } ;
 
+    dataReached = dataReached.isNotEmpty ? dataReached : ModalRoute.of(context).settings.arguments;
+    //print("data reached : ${dataReached.values.elementAt(0)}");
+
     Response response = await get('https://api.covid19india.org/v2/state_district_wise.json');
     var jsonData = json.decode(response.body);
 
@@ -29,11 +33,11 @@ class _StatePageState extends State<StatePage> {
 //      print(jsonData.values.elementAt(i).values.elementAt(1));
 //    }
 
-    int id = stateCode["UP"] ;
+    int id = stateCode[dataReached.values.elementAt(0)] ;
     print("id is : $id");
     var data = jsonData[id].values.elementAt(2) ;
     var len = data.length;
-    print(data.length);
+    //print(data.length);
     //print(test.runtimeType);
     //print(jsonData.values.elementAt(id).values.elementAt(0).values.elementAt(0).values.elementAt(2));
 
@@ -46,18 +50,10 @@ class _StatePageState extends State<StatePage> {
       statedatas.add(stateData);
 
     }
-    print("State Data :  ${statedatas.length}");
+   // print("State Data :  ${statedatas.length}");
 
     return statedatas ;
 }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    __getDistrictData();
-  }
-
 
   @override
   Widget build(BuildContext context) {

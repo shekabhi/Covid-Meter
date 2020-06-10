@@ -11,9 +11,9 @@ void main() {
     title: 'Covid 19',
     debugShowCheckedModeBanner: false,
     routes: {
-      '/' : (context) => StatePage(),
-      '/loding' : (context) => Loding(),
+      '/' : (context) => Loding(),
       '/indiaPage' : (context) => IndiaPage(),
+      '/statePage' : (context) => StatePage(),
       '/home' : (context) => Home(),
       '/error404' : (context) => ErrorPage(),
 
