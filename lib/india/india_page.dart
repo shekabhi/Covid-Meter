@@ -119,18 +119,6 @@ class _IndiaPageState extends State<IndiaPage> {
                                     ),
                                   ),
                                 ),
-                                ButtonBar(
-                                  children: [
-                                    FlatButton(
-                                      child: Text("District Wise Data"),
-                                      onPressed: (){
-                                        Navigator.pushReplacementNamed(context, '/statePage' ,arguments: {
-                                          'stateCode' : snapshot.data[index].statecode ,
-                                        });
-                                      },
-                                    )
-                                  ],
-                                )
                               ],
                             ),
                         ),

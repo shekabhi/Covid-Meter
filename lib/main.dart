@@ -1,10 +1,9 @@
 import 'package:covid19/india/india_page.dart';
+import 'package:covid19/state_data/selectState.dart';
 import 'package:covid19/state_data/state_page.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19/pages/home.dart';
 import 'package:covid19/pages/loding.dart';
-import 'package:covid19/errorpages/error_page.dart';
-
 
 void main() {
   runApp(MaterialApp(
@@ -15,9 +14,7 @@ void main() {
       '/indiaPage' : (context) => IndiaPage(),
       '/statePage' : (context) => StatePage(),
       '/home' : (context) => Home(),
-      '/error404' : (context) => ErrorPage(),
-
-
+      '/selectState' : (context) => SelectState(),
     },
   ));
 }

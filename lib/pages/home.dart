@@ -59,13 +59,39 @@ class _HomeState extends State<Home> {
                         Navigator.pushNamed(context, '/indiaPage');
                       },
                       icon: Icon(
-                        Icons.edit_location,
+                        Icons.arrow_forward_ios,
                         color: Color(0xFF42A5F5),
+                        size: 30.0,
                       ) ,
                       label: Text(
-                        'Tap To Choose India Data',
+                        'Tap To Choose India',
                         style: TextStyle(
-                          fontSize: 15.0,
+                          fontSize: 18.0,
+                          letterSpacing: 1.0,
+                          wordSpacing: -1,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 50,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FlatButton.icon(
+                      onPressed: () async {
+                        Navigator.pushNamed(context, '/selectState');
+                      },
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Color(0xFF42A5F5),
+                        size: 30.0,
+                      ) ,
+                      label: Text(
+                        'StateWise Data',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          letterSpacing: 1.0,
                         ),
                       ),
                     ),
